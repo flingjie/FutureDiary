@@ -20,6 +20,7 @@ export function MyDiary() {
   const { data: diaryDetails, isPending: isLoadingDetails, error: detailsError } = useSuiClientQuery(
     "multiGetObjects",
     {
+      // @ts-ignore
       ids: objectIds,
       options: { showContent: true }
     },
@@ -41,8 +42,10 @@ export function MyDiary() {
   }
 
   const sortedDiaries = [...diaryDetails].sort((a, b) => {
-    const dateA = new Date(a.data?.content.fields.date);
-    const dateB = new Date(b.data?.content.fields.date);
+    // @ts-ignore
+    const dateA = new Date(a.data?.content?.fields?.date);
+    // @ts-ignore
+    const dateB = new Date(b.data?.content?.fields?.date);
     return dateB.getTime() - dateA.getTime(); // 降序排列，最新的在前
   });
 
@@ -104,7 +107,8 @@ export function MyDiary() {
                 color: 'rgba(255, 255, 255, 0.7)',
                 letterSpacing: '0.5px'
               }}>
-                Date: {diary.data?.content.fields.date}
+                {/* @ts-ignore */}
+                Date: {diary.data?.content?.fields?.date}
               </Text>
               <Text style={{ 
                 fontSize: '18px', 
@@ -112,10 +116,12 @@ export function MyDiary() {
                 color: 'rgba(255, 255, 255, 0.9)',
                 letterSpacing: '0.3px'
               }}>
-                {diary.data?.content.fields.content}
+                {/* @ts-ignore */}
+                {diary.data?.content?.fields?.content}
               </Text>
               <img 
-                src={diary.data?.content.fields.image_url} 
+                // @ts-ignore
+                src={diary.data?.content?.fields?.image_url} 
                 alt="Diary Image" 
                 style={{
                   maxWidth: '100%',

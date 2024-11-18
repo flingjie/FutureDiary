@@ -207,10 +207,6 @@ export function NewDiary() {
               fontFamily: '"Rajdhani", sans-serif',
               outline: 'none',
               transition: 'all 0.3s ease',
-              '&:focus': {
-                borderColor: '#00ffff',
-                boxShadow: '0 0 10px rgba(0, 255, 255, 0.2)',
-              }
             }}
             required
             placeholder="When will this story happen?"
@@ -329,12 +325,6 @@ export function NewDiary() {
             cursor: isGenerating ? 'not-allowed' : 'pointer',
             opacity: isGenerating ? 0.7 : 1,
             transition: 'all 0.3s ease',
-            '&:hover': {
-              background: isGenerating ? 'rgba(0, 255, 255, 0.1)' : 'rgba(0, 255, 255, 0.2)',
-              borderColor: isGenerating ? 'rgba(0, 255, 255, 0.5)' : '#00ffff',
-              boxShadow: isGenerating ? 'none' : '0 0 15px rgba(0, 255, 255, 0.3)',
-              color: isGenerating ? '#00ffff' : '#ffffff',
-            }
           }}
         >
           {isGenerating ? 'Generating...' : 'Generate Story with AI'}
@@ -392,6 +382,7 @@ export function NewDiary() {
               fontFamily: '"Rajdhani", sans-serif',
               marginTop: '4px'
             }}>
+              {/* @ts-ignore */}
               Selected file: {formData.image.name}
             </span>
           )}
@@ -467,12 +458,6 @@ export function NewDiary() {
                 cursor: isGeneratingImage ? 'not-allowed' : 'pointer',
                 opacity: isGeneratingImage ? 0.7 : 1,
                 transition: 'all 0.3s ease',
-                '&:hover': {
-                  background: isGeneratingImage ? 'rgba(0, 255, 255, 0.1)' : 'rgba(0, 255, 255, 0.2)',
-                  borderColor: isGeneratingImage ? 'rgba(0, 255, 255, 0.5)' : '#00ffff',
-                  boxShadow: isGeneratingImage ? 'none' : '0 0 15px rgba(0, 255, 255, 0.3)',
-                  color: isGeneratingImage ? '#00ffff' : '#ffffff',
-                }
               }}
             >
               {isGeneratingImage ? 'Generating Image...' : 'GENERATE AI IMAGE'}
@@ -496,12 +481,6 @@ export function NewDiary() {
                 cursor: (!formData.image || isUploadingToIPFS) ? 'not-allowed' : 'pointer',
                 opacity: (!formData.image || isUploadingToIPFS) ? 0.7 : 1,
                 transition: 'all 0.3s ease',
-                '&:hover': {
-                  background: (!formData.image || isUploadingToIPFS) ? 'rgba(255, 0, 255, 0.1)' : 'rgba(255, 0, 255, 0.2)',
-                  borderColor: (!formData.image || isUploadingToIPFS) ? 'rgba(255, 0, 255, 0.5)' : '#ff00ff',
-                  boxShadow: (!formData.image || isUploadingToIPFS) ? 'none' : '0 0 15px rgba(255, 0, 255, 0.3)',
-                  color: (!formData.image || isUploadingToIPFS) ? '#ff00ff' : '#ffffff',
-                }
               }}
             >
               {isUploadingToIPFS ? 'Uploading...' : 'UPLOAD TO IPFS'}
@@ -549,10 +528,6 @@ export function NewDiary() {
               transition: 'all 0.3s ease',
               boxShadow: '0 0 20px rgba(0, 255, 255, 0.2)',
               opacity: isCreatingNFT ? 0.7 : 1,
-              '&:hover': {
-                transform: 'translateY(-2px)',
-                boxShadow: '0 0 30px rgba(0, 255, 255, 0.4)',
-              }
             }}
           >
             {isCreatingNFT ? 'CREATING STORY...' : 'CREATE FUTURE STORY'}
