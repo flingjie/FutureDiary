@@ -1,5 +1,5 @@
 ## Demo Video
-![Demo Video](https://youtu.be/mFPHitJmKx8)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/mFPHitJmKx8/0.jpg)](https://www.youtube.com/watch?v=mFPHitJmKx8)
 
 From 0 to 1: Quickly Develop a SUI Dapp Using ChatGPT and Cursor.
 
