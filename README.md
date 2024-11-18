@@ -37,7 +37,7 @@ Quick building using @mysten/dapp-kit:
 - Deploy with walrus-sites
 
 Currently, not all features are fully developed
-GitHub repository:
+
 Donate (SUI address): 0x94494f1c80e84c585b38568d91d5bcf2a6d3fde764534912475944f3271bb393
 
 
